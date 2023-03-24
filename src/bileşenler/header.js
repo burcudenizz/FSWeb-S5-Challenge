@@ -11,7 +11,25 @@ const Header = (baslik, tarih, yazi) => {
   //    <span class="temp">{ yazi }</span>
   //  </div>
   //
-}
+  const headerBox = document.createElement("div");
+  headerBox.classList.add("header");
+
+  const spanBox = document.createElement("span");
+  spanBox.classList.add("date");
+  spanBox.textContent = tarih;
+  headerBox.appendChild(spanBox);
+
+  const baslikBox = document.createElement("h1");
+  baslikBox.textContent = baslik;
+  headerBox.appendChild(baslikBox);
+
+  const spanBox2 = document.createElement("span");
+  spanBox2.classList.add("temp");
+  spanBox2.textContent = yazi;
+  headerBox.appendChild(spanBox2);
+
+  return headerBox;
+};
 
 const headerEkleyici = (secici) => {
   // GÖREV 2
@@ -20,10 +38,8 @@ const headerEkleyici = (secici) => {
   // Görev 1'de tanımladığınız Header bileşenini kullanarak bir header oluşturun (baslik,tarih,yazi parametrelerini kendi isteğinize göre belirleyin)
   // Oluşturulan header'i, verilen seçiciyle eşleşen DOM'daki öğeye eklemelidir.
   //
-
-  // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
+  // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper"))
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
- 
-}
+};
 
-export { Header, headerEkleyici }
+export { Header, headerEkleyici };
