@@ -17,7 +17,40 @@ const Card = (makale) => {
   //   </div>
   // </div>
   //
-}
+
+  const cardBox = document.createElement("div");
+  cardBox.classList.add("card");
+
+  const anaBaslikBox = document.createElement("div");
+  anaBaslikBox.classList.add("headline");
+  anaBaslikBox.textContent = makale.anabaslik;
+  cardBox.appendChild(anaBaslikBox);
+
+  const authorBox = document.createElement("div");
+  authorBox.classList.add("author");
+  anaBaslikBox.appendChild(authorBox);
+
+  const imgBox = document.createElement("div");
+  imgBox.classList.add("img-container");
+  authorBox.appendChild(imgBox);
+
+  const image = document.createElement("img");
+  image.src = makale.yazarFoto;
+  imgBox.appendChild(image);
+
+  const yazarAdıBox = document.createElement("span");
+  yazarAdıBox.textContent = makale.yazarAdi + "tarafından";
+  authorBox.appendChild(yazarAdıBox);
+
+  authorBox.appendChild(yazarAdıBox);
+  cardBox.appendChild(authorBox);
+
+  cardBox.addEventListener("click", (event) => {
+    console.log(makale.anabaslik);
+  });
+
+  return cardBox;
+};
 
 const cardEkleyici = (secici) => {
   // GÖREV 6
@@ -28,6 +61,6 @@ const cardEkleyici = (secici) => {
   // Card bileşenini kullanarak yanıttaki her makale nesnesinden bir kart oluşturun.
   // Her cardı, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
-}
+};
 
-export { Card, cardEkleyici }
+export { Card, cardEkleyici };
